@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Cabras</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="titulo">REGISTRO DE CABRAS</h1>
+        <img src="img/logo0.jpeg" alt="Logo" class="logo">
+      </header>
+    <form id="form-cabra">
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="date" id="fechaNacimiento" placeholder="Fecha de Nacimiento" required>
+        <link rel="stylesheet" href="registrocabras.css">
+        <input type="date" id="fechaFallecimiento" placeholder="Fecha de Fallecimiento">
+        <select id="estado">
+            <option value="nacido">Nacido</option>
+            <option value="fallecido">Fallecido</option>
+        </select>
+        <button type="submit">Registrar</button>
+    </form>
+
+    <table id="tabla-cabras">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Fecha Nacimiento</th>
+                <th>Fecha Fallecimiento</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script src="Registrocabras.js" defer></script>
+  
+</body>
+</html>
