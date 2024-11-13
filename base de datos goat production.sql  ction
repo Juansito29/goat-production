@@ -1,0 +1,89 @@
+
+CREATE DATABASE goats_production;
+USE goats_production;
+
+CREATE TABLE cabra (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY, 
+    nombre VARCHAR(255) NOT NULL,         
+    fecha_nacimiento DATE,                
+    fecha_fallecimiento DATE,            
+    estado VARCHAR(50)                     
+);
+
+
+
+CREATE TABLE productos (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY, 
+    tipo_producto VARCHAR(100) NOT NULL,  
+    cantidad INT NOT NULL,                 
+    fecha_produccion DATE,                
+    cabra_id BIGINT,                       
+    FOREIGN KEY (cabra_id) REFERENCES cabra(id) ON DELETE CASCADE 
+);
+
+CREATE TABLE historial_salud (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,  
+    descripcion VARCHAR(500),             
+    fecha DATE,                           
+    cabra_id BIGINT,                      
+    FOREIGN KEY (cabra_id) REFERENCES cabra(id) ON DELETE CASCADE 
+);
+
+CREATE TABLE alimentacion (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,  
+    tipo_alimento VARCHAR(100) NOT NULL,   
+    cantidad INT NOT NULL,              
+    fecha DATE,                           
+    cabra_id BIGINT,                     
+    FOREIGN KEY (cabra_id) REFERENCES cabra(id) ON DELETE CASCADE 
+);
+
+CREATE TABLE ubicacion (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,  
+    lugar VARCHAR(255) NOT NULL,           
+    fecha_entrada DATE,                  
+    fecha_salida DATE,                    
+    cabra_id BIGINT,                      
+    FOREIGN KEY (cabra_id) REFERENCES cabra(id) ON DELETE CASCADE 
+);
+
+CREATE TABLE venta_cabra (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,   
+    fecha_venta DATE,                      
+    precio DECIMAL(10,2),                   
+    comprador_nombre VARCHAR(255),          
+    cabra_id BIGINT,                        
+    FOREIGN KEY (cabra_id) REFERENCES cabra(id) ON DELETE CASCADE 
+);
+
+
+INSERT INTO cabra (nombre, fecha_nacimiento, estado)
+VALUES ('Cabra 1', '2015-06-15', 'Viva'),
+       ('Cabra 2', '2018-03-22', 'Muerta'),
+       ('Cabra 3', '2020-01-10', 'Viva');
+
+
+INSERT INTO productos (tipo_producto, cantidad, fecha_produccion, cabra_id)
+VALUES ('Leche', 10, '2024-11-12', 1),
+       ('Leche', 8, '2024-11-11', 3);
+
+
+INSERT INTO historial_salud (descripcion, fecha, cabra_id)
+VALUES ('Vacunación', '2024-01-01', 1),
+       ('Enfermedad tratada', '2024-05-01', 2);
+
+
+INSERT INTO alimentacion (tipo_alimento, cantidad, fecha, cabra_id)
+VALUES ('Pasto', 5, '2024-11-10', 1),
+       ('Grano', 3, '2024-11-11', 3);
+
+
+INSERT INTO ubicacion (lugar, fecha_entrada, fecha_salida, cabra_id)
+VALUES ('Establo 1', '2024-11-01', NULL, 1),
+       ('Campo 2', '2024-11-05', '2024-11-10', 2);
+
+INSERT INTO venta_cabra (fecha_venta, precio, comprador_nombre, cabra_id)
+VALUES ('2024-11-01', 300.00, 'Juan Pérez', 3);
+
+SHOW TABLES;  
+DESCRIBE cabra;  
