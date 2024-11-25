@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+
+    <link rel="stylesheet" href="registrocabras.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+ 
+        <div class="carousel-container">
+            <button class="carousel-btn left" onclick="moveCarousel(-1)">&#8592;</button>
+            <div class="carousel-wrapper">
+                <ul class="carousel" id="carousel">
+            
+                </ul>
+            </div>
+            <button class="carousel-btn right" onclick="moveCarousel(1)">&#8594;</button>
+        </div>
+        <div class="cart-container">
+            <h2>Carrito</h2>
+            <ul id="carrito">
+
+            </ul>
+            <p id="total">Total: $0</p>
+            <button id="vaciarCarrito" onclick="vaciarCarrito()">Vaciar Carrito</button>
+            <button id="pagarCarrito" onclick="realizarPago()">Pagar</button>
+        </div>
+    </div>
+
+    <script src="registrocabras.js"></script>
+</body>
+
+</html>

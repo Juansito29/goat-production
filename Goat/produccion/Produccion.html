@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producción </title>
+    <link rel="stylesheet" href="produccion.css">
+</head>
+<body>
+    <header>
+        <h1> Producción </h1>
+    </header>
+
+    <main>
+     
+        <section class="registro">
+            <h2>📋 Registrar Producción</h2>
+            <form id="formulario-produccion">
+                <div class="form-group">
+                    <label for="fecha">📅 Fecha:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cabra">🐐 ID/Número de Cabra:</label>
+                    <input type="text" id="cabra" name="cabra" placeholder="Ejemplo: 001" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="produccion"> Producción (litros):</label>
+                    <input type="number" id="produccion" name="produccion" placeholder="Ejemplo: 2.5" step="0.1" required>
+                </div>
+
+                <button type="submit">Guardar</button>
+            </form>
+        </section>
+
+  
+        <section class="estadisticas">
+            <h2>📊 Estadísticas</h2>
+            <div id="resumen">
+                <div class="stat">
+                    <p>Total producido:</p>
+                    <span id="total-litros">0</span> litros
+                </div>
+                <div class="stat">
+                    <p>Número de registros:</p>
+                    <span id="num-registros">0</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Creado por Goat prodducion</p>
+    </footer>
+
+    <script src="produccion.js"></script>
+</body>
+</html>

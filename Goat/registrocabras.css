@@ -1,0 +1,253 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-image: url(fodoprincipal.jpeg);
+    color: white;
+    font-size: 16px;
+    line-height: 1.6;
+    transition: background-color 0.3s ease;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+.carousel-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 20px auto;
+    border: 3px solid white;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to top, #f7e2c4, #f7f1e1);
+}
+
+.carousel-wrapper {
+    display: flex;
+    overflow-x: scroll;
+    gap: 15px;
+    scroll-behavior: smooth;
+}
+
+.carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.3s ease;
+}
+
+.carousel li {
+    list-style: none;
+    width: 250px;
+    height: 320px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+}
+
+.carousel li img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel li h3 {
+    font-family: 'Georgia', serif;
+    font-size: 1.2em;
+    color: white;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.carousel li:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background: #ffcc80;
+}
+
+.carousel li:hover h3 {
+    color: #d87c44;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-btn.left {
+    left: 0;
+}
+
+.carousel-btn.right {
+    right: 0;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.cart-container {
+    margin-top: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cart-container h2 {
+    font-family: 'Georgia', serif;
+    font-size: 2.5em;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+
+#carrito li {
+    background: #f9f7f2;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#carrito li button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease;
+}
+
+#carrito li button:hover {
+    background: #c0392b;
+}
+
+#total {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+}
+
+button {
+    background-color: #26574f;
+    color: #fff;
+    border: none;
+    padding: 12px 22px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #8b6d46;
+}
+
+@media (max-width: 768px) {
+    .carousel li {
+        width: 180px;
+        height: 250px;
+    }
+
+    .carousel-btn {
+        padding: 12px;
+        font-size: 24px;
+    }
+
+    .cart-container {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel-container {
+        max-width: 90%;
+    }
+
+    .carousel li {
+        width: 150px;
+        height: 200px;
+    }
+
+    .carousel-btn {
+        padding: 10px;
+        font-size: 22px;
+    }
+
+    .cart-container {
+        padding: 15px;
+    }
+
+    #carrito li {
+        font-size: 0.9em;
+    }
+
+    #total {
+        font-size: 1.3em;
+    }
+}
+button {
+    background-color: #7e4b3b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+#pagarCarrito {
+    background-color: #26574f;
+    color: white;
+    font-size: 1.2em;
+    padding: 12px 25px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#pagarCarrito:hover {
+    background-color: #2ecc71;
+}
+
+
+button:hover {
+    background-color: #8b6d46;
+}
