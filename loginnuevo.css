@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+:root {
+    --color-primary:  rgb(111, 199, 136);
+    --color-secondary:  rgb(68, 162, 95);
+    --color-background:  rgba(179, 238, 186, 0.695);
+    --color-background-form: #ffffff;
+    --color-text-primary: #000000;
+    --color-text-secondary: #656565;
+    --color-border: #CDCDCD;
+    --color-button-text: #FFFFFF;
+    --color-title: #F7F3FA;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url(../img/img2.wallspic.com-cabra_antlope-oveja-1920x1200.jpg)  no-repeat center center;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+
+}
+
+
+.container{
+    display: grid;
+    grid-template-columns: 4.2fr 5fr 0.8fr;
+    align-items: center;
+    width: 57.25rem;
+    height: 31rem;
+
+}
+
+.forms-container{
+ 
+    height: 100%;
+    background-color: var(--color-background-form);
+    overflow: hidden;
+}
+
+.forms{
+    transition: transform 0.5s ease;
+}
+
+.forms.active{
+    transform: translateY(-50%);
+}
+
+
+form{
+
+    padding: 1.8rem
+}
+
+form p{
+   
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin-top: 0.3rem;
+    margin-bottom: 1.8rem;
+}
+
+form p a{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.input-container{
+ 
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.input-container input{
+    padding: 0.7rem;
+    border: 2px solid var(--color-border);
+    border-radius: 0.4rem;
+    outline: none;
+}
+
+.input-container label, .input-container a{
+    font-size: 0.8rem;
+    font-weight: 600;
+  
+}
+
+.input-container .forget{
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-me{
+   
+    display: flex;
+    gap: 0.3rem;
+    margin-bottom: 1.7rem;
+
+}
+
+.remember-me label{
+   
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+
+form button{
+    width: 100%;
+    padding: 0.9rem 0;
+    background-color: var(--color-secondary);
+    color: var(--color-button-text);
+    font-weight: 500;
+    border: none;
+    border-radius: 0.5rem;
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+   
+}
+
+
+.banner{
+ 
+    height: 115%;
+    padding: 5rem 2rem 0 2rem;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-primary);
+
+}
+
+.banner h1{
+ 
+    color: var(--color-title);
+    font-size: 3rem;
+    line-height: 0.9;
+}
+
+.banner h1 span{
+
+    display: block;
+    font-weight: 500;
+}
+
+.banner p{
+   
+    color : var(--color-background-form);
+    font-size: 0.8rem;
+    margin-top: 1rem;
+   
+}
+
+.banner img{
+    position: absolute;
+    bottom: 2.5rem;
+    right: -1rem;
+    width: 100%;
+
+}
+
+
+.shape{
+    background-color: #ffffff;
+    border-radius: 50%;
+    opacity: 0.2;
+    position: absolute;
+}
+
+.shape1{
+    height: 12.5rem;
+    width: 12.5rem;
+    left: 20rem;
+    top: 1.25rem;
+}
+
+.shape2{
+    width: 28rem;
+    height: 28rem;
+    bottom: -10rem;
+    right: -10rem;
+}
+
+.shape3{
+    width: 18rem;
+    height: 15rem;
+    top: 10.5rem;
+    left: -10rem;
+}
+
+.sidebar{
+    
+    background-color: var(--color-background-form);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    user-select: none;
+}
+
+
+
+.sidebar::after{
+    content: '';
+    background-color: var(--color-primary);
+    height: 50%;
+    width: 0.3rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: top 0.5s ease;
+}
+
+.sidebar.active::after{
+    top: 50%;
+}
+
+.sidebar .sign{
+  
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    cursor: pointer;
+}
+
+.sidebar img{
+    width: 1.5rem;
+}
+
+.sidebar span{
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+}
+
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
